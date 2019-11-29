@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>刘昊然的空间网页</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.first {
+				display: block;
+				width: 1900px;
+				height: 130px;
+				background: #000000;
+			}
+			.first img {
+				height: 110px;
+				width: 220px;
+				float: left;
+				margin-left: 100px;
+				margin-top: 10px;
+			}
+
+			.first ul {
+				width: 480px;
+				height: 130px;
+				list-style: none;
+				margin-right: 150px;
+				float: right;
+			}
+
+			.first ul li {
+				float: left;
+				width: 80px;
+				line-height: 130px;
+			}
+
+			.first ul li a:visited {
+				color: white;
+			}
+
+			.first ul li a:link {
+
+				text-decoration: blink;
+				font: 18px "Microsoft YaHei";
+				color: white;
+			}
+
+			.first ul li a:hover {
+				font: 20px "Microsoft YaHei";
+				color: chocolate;
+			}
+
+			.second {
+				background-image: url(img/背景04.png);
+				background-repeat: no-repeat;
+
+				width: 1900px;
+				height: 840px;
+			}
+
+			img {}
+
+			.photo {
+				width: 900px;
+				height: 550px;
+				border: 1px solid #555555;
+				margin: auto auto;
+				position: relative;
+				background: #ffffff;
+				box-shadow: 0 10px 80px rgba(0, 0, 0, .6)
+			}
+
+			.photo input {
+				display: none;
+			}
+
+			.image {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 800px;
+				height: 450px;
+				margin: 25px 25px;
+				transform: scale(0);
+				opacity: 0;
+				transition: all 0.7s;
+			}
+
+			.image img {
+				width: 850px;
+				height: 500px;
+			}
+
+			.nav label {
+				width: 150px;
+				height: 500px;
+				margin: 25px 25px;
+				position: absolute;
+				z-index: 10;
+				opacity: 0;
+				display: none;
+				cursor: pointer;
+				transition: opacity 0.2s;
+				color: #ffffff;
+				font-size: 50px;
+				line-height: 450px;
+				text-align: center;
+				text-shadow: 0 0 15px #555555);
+			}
+
+			.leftjianbian {
+				background: linear-gradient(right, rgba(250, 242, 239, 0) 1%, rgba(158, 148, 166, 0.5) 100%);
+				background: -o-linear-gradient(right, rgba(250, 242, 239, 0) 1%, rgba(158, 148, 166, 0.5) 100%);
+				background: -ms-linear-gradient(right, rgba(250, 242, 239, 0) 1%, rgba(158, 148, 166, 0.5) 100%);
+				background: -moz-linear-gradient(right, rgba(250, 242, 239, 0) 1%, rgba(158, 148, 166, 0.5) 100%);
+				background: -webkit-linear-gradient(right, rgba(250, 242, 239, 0) 1%, rgba(158, 148, 166, 0.5) 100%);
+			}
+
+			.rightjianbian {
+				background: linear-gradient(left, rgba(250, 242, 239, 0) 1%, rgba(158, 148, 166, 0.5) 100%);
+				background: -o-linear-gradient(left, rgba(250, 242, 239, 0) 1%, rgba(158, 148, 166, 0.5) 100%);
+				background: -ms-linear-gradient(left, rgba(250, 242, 239, 0) 1%, rgba(158, 148, 166, 0.5) 100%);
+				background: -moz-linear-gradient(left, rgba(250, 242, 239, 0) 1%, rgba(158, 148, 166, 0.5) 100%);
+				background: -webkit-linear-gradient(left, rgba(250, 242, 239, 0) 10%, rgba(158, 148, 166, 0.5) 100%);
+			}
+
+			.image:hover+.nav label {
+				opacity: 0.5;
+			}
+
+			.nav label:hover {
+				opacity: 1;
+			}
+
+			.nav .down {
+				right: 0;
+			}
+
+			input:checked+.control .image {
+				opacity: 1;
+				transform: scale(1);
+				transition: all 1s;
+			}
+
+			input:checked+.control .nav label {
+				display: block;
+			}
+
+			.dots {
+				width: 100%;
+				height: 20px;
+				position: absolute;
+				bottom: 30px;
+				text-align: center;
+			}
+
+			.dot {
+				width: 10px;
+				height: 10px;
+				margin: 0px 5px;
+				border-radius: 50%;
+				position: relative;
+				display: inline-block;
+				background: rgba(0, 0, 0, 0.3);
+			}
+
+			input#img1:checked~.dots label#dot1,
+			input#img2:checked~.dots label#dot2,
+			input#img3:checked~.dots label#dot3,
+			input#img4:checked~.dots label#dot4,
+			input#img5:checked~.dots label#dot5,
+			input#img6:checked~.dots label#dot6 {
+				background: rgba(0, 0, 0, 0.7);
+			}
+
+			.third {
+				display: inline-block;
+				height: 445px;
+				background: white;
+			}
+
+			.third_1 {
+				line-height: 445px;
+				float: left;
+				margin-left: 500px;
+			}
+
+			.third_2 {
+				line-height: 445px;
+				float: left;
+				margin-left: 200px;
+			}
+
+			.third_3 {
+				line-height: 445px;
+				float: left;
+				margin-left: 200px;
+			}
+
+			.third_1 span {
+				position: relative;
+				top: 30px;
+				right: 125px;
+				font-weight: bold;
+				font: 30px Microsoft YaHei;
+				color: black;
+			}
+
+			.third_2 span {
+				position: relative;
+				top: 30px;
+				right: 120px;
+				font-weight: bold;
+				font: 30px Microsoft YaHei;
+				color: black;
+			}
+
+			.third_3 span {
+				position: relative;
+				top: 30px;
+				right: 120px;
+				font-weight: bold;
+				font: 30px Microsoft YaHei;
+				color: black;
+			}
+
+			.third_1 span:hover {
+				font: bold 30px "Microsoft YaHei";
+				color: coral;
+			}
+
+			.third_2 span:hover {
+				font: bold 30px "Microsoft YaHei";
+				color: coral;
+			}
+
+			.third_3 span:hover {
+				font: bold 30px "Microsoft YaHei";
+				color: coral;
+			}
+
+			.third_1 img {
+				transition-duration: 2s;
+			}
+
+			.third_1 img:hover {
+				transform: scale(1.1);
+			}
+
+			.third_2 img {
+				transition-duration: 2s;
+			}
+
+			.third_2 img:hover {
+				transform: scale(1.1);
+			}
+
+			.third_3 img {
+				transition-duration: 2s;
+			}
+
+			.third_3 img:hover {
+				transform: scale(1.1);
+			}
+
+			.fourth {
+				display: block;
+				height: 240px;
+				background: #D2691E;
+				text-align: center;
+			}
+
+			.fourth span {
+				font: bold 50px "楷体";
+				color: white;
+				line-height: 200px;
+				text-align: center;
+				transition: margin-right 2s;
+			}
+
+			.fourth:hover span {
+				margin-right: 35px;
+			}
+
+
+			.loading {
+				float: left;
+				width: 160px;
+				height: 240px;
+				position: absolute;
+			}
+
+			.loading::after {
+				content: '';
+				width: 110%;
+				height: 10px;
+				background-color: rgba(0, 0, 0, 0.2);
+				position: absolute;
+				left: -8px;
+				bottom: -5px;
+				z-index: -1;
+				border-radius: 100%;
+				animation: shadow 2s infinite linear;
+			}
+
+			.squareXS {
+				width: 24px;
+				height: 24px;
+				background-color: dodgerblue;
+				position: absolute;
+				left: calc(50% - 12px);
+				bottom: 30px;
+				transform: scale(1.5, 0.5)rotate(0);
+				/* 定义动画名称
+             动画执行时间秒/单位 
+             执行效果linear匀速 
+             动画执行等待 
+            iteratio-count 动画执行次数 默认为1 infinite无数次*/
+				animation: squareXS 2s linear infinite;
+			}
+
+			.squareXL {
+				width: 72px;
+				height: 72px;
+				background-color: crimson;
+				position: absolute;
+				left: calc(50% - 36px);
+				bottom: -20px;
+				transform: scale(2, 0.5)rotate(0);
+				animation: squareXL 2s linear infinite;
+			}
+
+
+			@keyframes squareXS {
+				0% {
+					transform: scale(1.5, 0.5)rotate(0);
+				}
+
+				10% {
+					transform: scale(1, 1)rotate(0);
+				}
+
+				42% {
+					transform: scale(1, 1)rotate(-180deg);
+					bottom: 250px;
+				}
+
+				74% {
+					transform: scale(1, 1)rotate(-360deg);
+				}
+
+				75% {
+					transform: scale(1, 1)rotate(-360deg);
+					bottom: 80px;
+				}
+
+				95% {
+					transform: scale(1.5, 0.5)rotate(-360deg);
+					bottom: 24px;
+				}
+
+				100% {
+					transform: scale(1.5, 0.5)rotate(-360deg);
+				}
+			}
+
+			@keyframes squareXL {
+				0% {
+					transform: scale(2, 0.5)rotate(0);
+				}
+
+				10% {
+					transform: scale(1, 1)rotate(0);
+				}
+
+				42% {
+					transform: scale(1, 1)rotate(90deg);
+					bottom: 120px;
+				}
+
+				74% {
+					transform: scale(1, 1)rotate(180deg);
+				}
+
+				75% {
+					transform: scale(1, 1)rotate(180deg);
+					bottom: 0px;
+				}
+
+				95% {
+					transform: scale(2, 0.5)rotate(180deg);
+					bottom: -20px;
+				}
+
+				100% {
+					transform: scale(2, 0.5)rotate(180deg);
+				}
+			}
+
+			@keyframes shadow {
+				40% {
+					transform: scale(0.5, 0.8);
+				}
+			}
+
+			.fifth {
+				display: block;
+				height: 500px;
+				background: #000000;
+			}
+
+			.fifth_1 {
+				display: block;
+				height: 250px;
+			}
+
+			.fifth_1_1 {
+				float: left;
+				margin-left: 100px;
+				width: 400px;
+			}
+
+			.fifth_1_2 {
+				float: left;
+				width: 400px;
+			}
+
+			h3 {
+				font: 24px "楷体";
+				color: white;
+				padding-bottom: 10px;
+				margin-bottom: 0px;
+			}
+
+			.fifth_1_1 ul {
+				margin-top: 10px;
+				padding-left: 0px;
+			}
+
+			.fifth_1_1 ul li {
+				padding-top: 4px;
+				padding-bottom: 5px;
+				list-style-type: none;
+			}
+
+			.fifth_1_1 ul li span:hover {
+				color: aqua;
+			}
+
+
+			.fifth_1_1 ul li span {
+				font: 16px "microsoft yahei";
+				color: white;
+				padding-bottom: 20px;
+			}
+
+			.fifth_1_2 ul {
+				margin-top: 10px;
+				padding-left: 0px;
+			}
+
+			.fifth_1_2 ul li {
+				padding-top: 4px;
+				padding-bottom: 5px;
+				list-style-type: none;
+			}
+
+			.fifth_1_2 ul li span {
+				font: 16px "microsoft yahei";
+				color: white;
+				padding-bottom: 20px;
+			}
+
+			.fifth_1_2 ul li span:hover {
+				color: aqua;
+			}
+
+
+			.fifth_1_3 {
+				float: left;
+				width: 320px;
+				box-sizing: border-box;
+			}
+
+
+			.fifth_1_4 {
+				float: left;
+				width: 400px;
+				margin-left: 120px;
+				box-sizing: border-box;
+			}
+
+			.fifth_1_4 ul {
+				margin-top: 10px;
+				padding-left: 0px;
+			}
+
+			.fifth_1_4 ul li {
+				padding-top: 4px;
+				padding-bottom: 5px;
+				list-style-type: none;
+			}
+
+
+
+			.fifth_1_4 ul li span {
+				font: 16px "microsoft yahei";
+				color: white;
+				padding-bottom: 20px;
+			}
+
+
+			.fifth_1_3 .font_1 {
+				margin-top: 10px;
+				float: left;
+				border-radius: 20px;
+				width: 80px;
+				text-align: center;
+				font: 24px "楷体";
+				color: white;
+				background: #555555;
+			}
+
+			.fifth_1_3 .font_1:hover {
+				background: aqua;
+			}
+
+			.fifth_1_3 .font_2 {
+				margin-top: 10px;
+				margin-left: 10px;
+				float: left;
+				border-radius: 20px;
+				width: 100px;
+				text-align: center;
+				font: 24px "楷体";
+				color: white;
+				background: #555555;
+			}
+
+			.fifth_1_3 .font_2:hover {
+				background: aqua;
+			}
+
+
+			.bb1 {
+				width: 250px;
+				height: 28px;
+				margin-top: 20px;
+			}
+
+			.search {
+				width: 222px;
+				height: 28px;
+				border: 1px solid #e5e5e5;
+				background: #f1f1f1;
+				outline: none;
+				padding-left: 20px;
+				position: absolute;
+			}
+
+			.btn {
+				width: 28px;
+				height: 27px;
+				margin-left: 200px;
+				margin-top: 1px;
+				background-repeat: no-repeat;
+				/* 大小 */
+				background-size: 28px 28px;
+				/* 位置 */
+				background-position: center;
+				background-image: url(img/search.png);
+				border: none;
+				position: absolute;
+				cursor: pointer;
+			}
+
+			.fifth_2 {
+				text-align: center;
+				height: 8px;
+				width: 1500px;
+				margin: 0 auto;
+				background: #555555;
+			}
+
+			.fifth_3 {
+				color: white;
+				font: 20px "microsoft yahei";
+				float: right;
+				margin-top: 50px;
+				margin-right: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="first">
+			<img src="img/1.01.png">
+			<ul>
+				<li><a href="#">主页</a></li>
+				<li><a href="#">me</a></li>
+				<li><a href="#">动态</a></li>
+				<li><a href="#">图像馆</a></li>
+				<li><a href="#">博客</a></li>
+				<li><a href="#">联系我们</a></li>
+			</ul>
+		</div>
+
+		<div class="second">
+			<div class="photo" id="photo">
+				<!--//1-->
+				<input type="radio" name="btn" id="img1" checked />
+				<div class="control">
+					<div class="image"><img src="img/刘昊然07.png" /></div>
+					<div class="nav">
+						<label for="img6" class="up leftjianbian">
+							<</label> <label for="img2" class="down rightjianbian">>
+						</label>
+					</div>
+				</div>
+				<!--//2-->
+				<input type="radio" name="btn" id="img2" />
+				<div class="control">
+					<div class="image"><img src="img/刘昊然00.png" /></div>
+					<div class="nav">
+						<label for="img1" class="up leftjianbian">
+							<</label> <label for="img3" class="down rightjianbian">>
+						</label>
+					</div>
+				</div>
+				<!--//3-->
+				<input type="radio" name="btn" id="img3" />
+				<div class="control">
+					<div class="image"><img src="img/刘昊然01.png" /></div>
+					<div class="nav">
+						<label for="img2" class="up leftjianbian">
+							<</label> <label for="img4" class="down rightjianbian">>
+						</label>
+					</div>
+				</div>
+				<!--//4-->
+				<input type="radio" name="btn" id="img4" />
+				<div class="control">
+					<div class="image"><img src="img/刘昊然03.png" /></div>
+					<div class="nav">
+						<label for="img3" class="up leftjianbian">
+							<</label> <label for="img5" class="down rightjianbian">>
+						</label>
+					</div>
+				</div>
+				<!--//5-->
+				<input type="radio" name="btn" id="img5" />
+				<div class="control">
+					<div class="image"><img src="img/刘昊然06.png" /></div>
+					<div class="nav">
+						<label for="img4" class="up leftjianbian">
+							<</label> <label for="img6" class="down rightjianbian">>
+						</label>
+					</div>
+				</div>
+				<!--//6-->
+				<input type="radio" name="btn" id="img6" />
+				<div class="control">
+					<div class="image"><img src="img/刘昊然02.png" /></div>
+					<div class="nav">
+						<label for="img5" class="up leftjianbian">
+							<</label> <label for="img1" class="down rightjianbian">>
+						</label>
+					</div>
+				</div>
+				<div class="dots">
+					<label for="img1" class="dot" id="dot1"></label>
+					<label for="img2" class="dot" id="dot2"></label>
+					<label for="img3" class="dot" id="dot3"></label>
+					<label for="img4" class="dot" id="dot4"></label>
+					<label for="img5" class="dot" id="dot5"></label>
+					<label for="img6" class="dot" id="dot6"></label>
+				</div>
+			</div>
+		</div>
+
+		<div class="third">
+			<div class="third_1">
+				<img src="img/个人.png">
+				<span>个人简介</span>
+			</div>
+			<div class="third_2">
+				<img src="img/音乐.png">
+				<span>打开音乐</span>
+			</div>
+			<div class="third_3">
+				<img src="img/电影.png">
+				<span>影视作品</span>
+			</div>
+		</div>
+
+
+		<div class="fourth">
+
+			<div class="loading">
+				<div class="squareXS"></div>
+				<div class="squareXL"></div>
+
+			</div>
+
+			<span>点</span>
+			<span>我</span>
+			<span>有</span>
+			<span>惊</span>
+			<span>喜</span>
+			<span>哦</span>
+			<span>!</span>
+			<span>!</span>
+			<span>!</span>
+		</div>
+
+		<div class="fifth">
+			<div class="fifth_1">
+				<div class="fifth_1_1">
+					<h3>近期活动</h3>
+					<ul>
+						<li><span>1.刘昊然的近期行程</span></li>
+						<li><span>2.刘昊然去微博之夜</span></li>
+						<li><span>3.刘昊然的电视剧发布会</span></li>
+						<li><span>4.刘昊然去电影颁奖典礼</span></li>
+						<li><span>5.刘昊然20岁生日宴会</span></li>
+					</ul>
+				</div>
+				<div class="fifth_1_2">
+					<h3>近期评论</h3>
+					<ul>
+						<li><span>1.20岁的好多天，依旧不如你聪明</span></li>
+						<li><span>2.生日快乐，祝你每天能吃到不一样的果冻。</span></li>
+						<li><span>3.怎么样的你我们都满意。生日快乐昊然！</span></li>
+						<li><span>4.宝贝生日快乐！要永远开心快乐！</span></li>
+						<li><span>5.你忙归忙什么时候有空嫁给我</span></li>
+
+					</ul>
+				</div>
+				<div class="fifth_1_3">
+					<h3>标签</h3>
+					<div class="font_1">小清新</div>
+					<div class="font_2">呆萌</div>
+					<div class="font_2">演员</div>
+					<div class="font_2">艺人</div>
+					<div class="font_2">长腿欧巴</div>
+					<div class="font_2">文艺青年</div>
+					<div class="font_2">暖心学长</div>
+				</div>
+				<div class="fifth_1_4">
+					<h3>关于</h3>
+					<ul>
+						<li><span>想要知道更多</span></li>
+					</ul>
+					<div class="bb1">
+						<input type="text" class="search" placeholder="SEARCH...">
+						<input type="text" class="btn">
+					</div>
+				</div>
+			</div>
+			<div class="fifth_2">
+			</div>
+			<div class="fifth_3">
+				Copyright © 2019 - 2021 南工院 移动1813 顾兆远版权所有
+			</div>
+		</div>
+	</body>
+</html>
