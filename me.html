@@ -3,10 +3,47 @@
 	<head>
 		<meta charset="utf-8">
 		<title>刘昊然的空间网页</title>
+
+		<style>
+			.over {
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 100%;
+				z-index: 100;
+			}
+
+			.tempContainer {
+				position: fixed;
+				width: 100%;
+				margin-right: 0px;
+				margin-left: 0px;
+				text-align: center;
+				z-index: 101;
+			}
+		</style>
+		<script src="js/jquery-3.4.1.min.js"></script>
 		<style type="text/css">
 			* {
 				margin: 0;
 				padding: 0;
+			}
+
+			.over {
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 100%;
+				z-index: 100;
+			}
+
+			.tempContainer {
+				position: fixed;
+				width: 100%;
+				margin-right: 0px;
+				margin-left: 0px;
+				text-align: center;
+				z-index: 101;
 			}
 
 			.first {
@@ -15,6 +52,7 @@
 				height: 130px;
 				background: #000000;
 			}
+
 			.first img {
 				height: 110px;
 				width: 220px;
@@ -22,10 +60,8 @@
 				margin-left: 100px;
 				margin-top: 10px;
 			}
-			
-			.first img:link{
-				
-			}
+
+			.first img:link {}
 
 
 
@@ -250,17 +286,73 @@
 				float: right;
 				margin-right: 50px;
 			}
-			
-			.second{
+
+			.second {
 				width: 1900px;
 				height: 665px;
 				background: white;
+			}
+
+			.second_1 {
+				text-align: center;
+				margin-top: 100px;
+				margin-left: 200px;
+				display: inline-block;
+			}
+
+			.second_1 img {
+				width: 300px;
+				height: 300px;
+				margin: 0 auto;
+				border-radius: 50%;
+			}
+
+			.second_2 {
+				text-align: center;
+				margin-top: 100px;
+				margin-left: 200px;
+				display: inline-block;
+			}
+
+			.second_2 img {
+				width: 300px;
+				height: 300px;
+				margin: 0 auto;
+				border-radius: 50%;
+			}
+
+			.second_3 {
+				text-align: center;
+				margin-top: 100px;
+				margin-left: 200px;
+				display: inline-block;
+			}
+
+			.second_3 img {
+				text-align: center;
+				width: 300px;
+				height: 300px;
+				margin: 0 auto;
+				border-radius: 50%;
+			}
+
+			.second a span {
+				text-align: center;
+				display: block;
+				margin-top: 20px;
+				font: bold 50px "楷体";
+				color: #00FFFF;
+				transition: color 1.5s;
+			}
+
+			.second a span:hover {
+				color: saddlebrown;
 			}
 		</style>
 	</head>
 	<body>
 		<div class="first">
-			<a href="index.html"><img src="img/1.01.png" ></a>
+			<a href="index.html"><img src="img/1.01.png"></a>
 			<ul>
 				<li><a href="index.html">主页</a></li>
 				<li><a href="me.html">me</a></li>
@@ -270,10 +362,27 @@
 				<li><a href="#">联系我们</a></li>
 			</ul>
 		</div>
-		
-		<div class="second">
-			
+<div class="over"></div>
+		<div class="second amplifyImg">
+			<div class="second_1">
+				<a><img src="img/me01.png"></a>
+				<a><span>刘昊然-杂志</span></a>
+				<span>刘昊然 《时尚芭莎》九月大片，<br>时尚的质感《Size潮流生活》《红秀GRAZIA》<br><br><br></span>
+			</div>
+			<div class="second_2">
+				<a><img src="img/me02.png"></a>
+				<a><span>刘昊然的同年照</span></a>
+				<span>可爱的脸庞和乖巧的气质和如今没<br>有太大差别，尤其是那颗标志性的小虎牙更加<br>让影迷坚信这就是自家偶像的童年照。<br><br></span>
+
+			</div>
+			<div class="second_3">
+				<a><img src="img/me03.png"></a>
+				<a><span>刘昊然电影《双生》</span></a>
+
+				<span>该片讲述了艺术学校的学生李拼找到<br>了一份兼职工作，为女孩涛画肖像画，来到了<br>一处偏僻的林中豪宅，期间发生了一系列诡异事<br>件的故事。</span>
+			</div>
 		</div>
+
 		<div class="fifth">
 			<div class="fifth_1">
 				<div class="fifth_1_1">
@@ -326,3 +435,77 @@
 		</div>
 	</body>
 </html>
+
+<script>
+	$(document).ready(function() {
+		var imgsObj = $('.amplifyImg img');
+		if (imgsObj) {
+			$.each(imgsObj, function() {
+				$(this).click(function() {
+					var currImg = $(this);
+					coverLayer(1);
+					var tempContainer = $('<div class=tempContainer></div>'); 
+					with(tempContainer) { 
+						appendTo("body");
+						var windowWidth = $(window).width();
+						var windowHeight = $(window).height();
+						var orignImg = new Image();
+						orignImg.src = currImg.attr("src");
+						var currImgWidth = orignImg.width;
+						var currImgHeight = orignImg.height;
+						if (currImgWidth < windowWidth) { 
+							if (currImgHeight < windowHeight) {
+								var topHeight = (windowHeight - currImgHeight) / 2;
+								if (topHeight > 35) { 
+									topHeight = topHeight - 35;
+									css('top', topHeight);
+								} else {
+									css('top', 0);
+								}
+								html('<img border=0 src=' + currImg.attr('src') + '>');
+							} else {
+								css('top', 0);
+								html('<img border=0 src=' + currImg.attr('src') + ' height=' + windowHeight + '>');
+							}
+						} else {
+							var currImgChangeHeight = (currImgHeight * windowWidth) / currImgWidth;
+							if (currImgChangeHeight < windowHeight) {
+								var topHeight = (windowHeight - currImgChangeHeight) / 2;
+								if (topHeight > 35) {
+									topHeight = topHeight - 35;
+									css('top', topHeight);
+								} else {
+									css('top', 0);
+								}
+								html('<img border=0 src=' + currImg.attr('src') + ' width=' + windowWidth + ';>');
+							} else {
+								css('top', 0);
+								html('<img border=0 src=' + currImg.attr('src') + ' width=' + windowWidth + '; height=' + windowHeight +
+									'>');
+							}
+						}
+					}
+					tempContainer.click(function() {
+						$(this).remove();
+						coverLayer(0);
+					});
+				});
+			});
+		} else {
+			return false;
+		}
+		function coverLayer(tag) {
+			with($('.over')) {
+				if (tag == 1) {
+					css('height', $(document).height());
+					css('display', 'block');
+					css('opacity', 1);
+					css("background-color", "#FFFFFF");
+					css("background-color", "rgba(0,0,0,0.7)"); 
+				} else {
+					css('display', 'none');
+				}
+			}
+		}
+	});
+</script>

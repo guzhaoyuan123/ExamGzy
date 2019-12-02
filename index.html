@@ -48,7 +48,6 @@
 			}
 
 			.first ul li a:link {
-
 				text-decoration: blink;
 				font: 18px "Microsoft YaHei";
 				color: white;
@@ -187,6 +186,10 @@
 				display: inline-block;
 				height: 445px;
 				background: white;
+			}
+			
+			.third a{
+				text-decoration: blink;
 			}
 
 			.third_1 {
@@ -605,6 +608,10 @@
 			}
 			
 			
+			.aa{
+				 text-decoration:none;
+			}
+			
 		</style>
 	</head>
 	<body>
@@ -694,21 +701,23 @@
 		</div>
 
 		<div class="third">
-			<div class="third_1">
-				<img src="img/个人.png">
-				<span>个人简介</span>
+			<div class="third_1" >
+				<a href="https://baike.baidu.com/item/%E5%88%98%E6%98%8A%E7%84%B6/13135002?fr=aladdin" target="_blank"><img src="img/个人.png" ></a>
+				<a href="https://baike.baidu.com/item/%E5%88%98%E6%98%8A%E7%84%B6/13135002?fr=aladdin" target="_blank"><span>个人简介</span></a>
 			</div>
 			<div class="third_2">
-				<img src="img/音乐.png">
-				<span>打开音乐</span>
+				<img src="img/音乐.png" id="btn">
+				<span id="btn2">打开音乐</span>
+				<audio src="img/123.mp3" id="myaudio" controls="controls" loop="false" loop="loop" hidden="true"></audio>
+				
 			</div>
 			<div class="third_3">
-				<img src="img/电影.png">
-				<span>影视作品</span>
+				
+				<a href="videintroduction.html" target="_blank"><img src="img/电影.png"></a>
+				<a href="videintroduction.html" target="_blank"><span>视频介绍</span></a>
 			</div>
 		</div>
-
-
+<a target="_blank" href="animation.html" class="aa">
 		<div class="fourth">
 
 			<div class="loading">
@@ -716,6 +725,7 @@
 				<div class="squareXL"></div>
 
 			</div>
+
 
 			<span>点</span>
 			<span>我</span>
@@ -727,6 +737,7 @@
 			<span>!</span>
 			<span>!</span>
 		</div>
+		</a>
 
 		<div class="fifth">
 			<div class="fifth_1">
@@ -780,3 +791,29 @@
 		</div>
 	</body>
 </html>
+
+<script type="text/javascript">
+		var btn = document.getElementById('btn');
+		var btn2 = document.getElementById('btn2');
+		var audio = document.getElementById('myaudio');
+		var i=0;
+		btn.onclick = function() {
+			if (i%2!=0) {
+				i++;
+				audio.pause();
+			} else {
+				i++;
+				audio.play();
+			}
+		}
+		
+		btn2.onclick = function() {
+			if (i%2!=0) {
+				i++;
+				audio.pause();
+			} else {
+				i++;
+				audio.play();
+			}
+		}
+	</script>
