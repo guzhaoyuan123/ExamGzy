@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>刘昊然的空间网页</title>
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.over {
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 100%;
+				z-index: 100;
+			}
+
+			.tempContainer {
+				position: fixed;
+				width: 100%;
+				margin-right: 0px;
+				margin-left: 0px;
+				text-align: center;
+				z-index: 101;
+			}
+
+			.first {
+				display: block;
+				width: 1900px;
+				height: 130px;
+				background: #000000;
+			}
+
+			.first img {
+				height: 110px;
+				width: 220px;
+				float: left;
+				margin-left: 100px;
+				margin-top: 10px;
+			}
+
+			.first img:link {}
+
+
+
+			.first ul {
+				width: 480px;
+				height: 130px;
+				list-style: none;
+				margin-right: 150px;
+				float: right;
+			}
+
+			.first ul li {
+				float: left;
+				width: 80px;
+				line-height: 130px;
+			}
+
+			.first ul li a:visited {
+				color: white;
+			}
+
+			.first ul li a:link {
+
+				text-decoration: blink;
+				font: 18px "Microsoft YaHei";
+				color: white;
+			}
+
+			.first ul li a:hover {
+				font: 20px "Microsoft YaHei";
+				color: chocolate;
+			}
+
+			.fifth {
+				width: 1900px;
+				display: block;
+				height: 500px;
+				background: #000000;
+			}
+
+			.fifth_1 {
+				display: block;
+				height: 250px;
+			}
+
+			.fifth_1_1 {
+				float: left;
+				margin-left: 100px;
+				margin-top: 100px;
+				width: 400px;
+			}
+
+			.fifth_1_2 {
+				float: left;
+				margin-top: 100px;
+				width: 400px;
+			}
+
+			h3 {
+				font: 24px "楷体";
+				color: white;
+				padding-bottom: 10px;
+				margin-bottom: 0px;
+			}
+
+			.fifth_1_1 ul {
+				margin-top: 10px;
+				padding-left: 0px;
+			}
+
+			.fifth_1_1 ul li {
+				padding-top: 4px;
+				padding-bottom: 5px;
+				list-style-type: none;
+			}
+
+			.fifth_1_1 ul li span:hover {
+				color: aqua;
+			}
+
+
+			.fifth_1_1 ul li span {
+				font: 16px "microsoft yahei";
+				color: white;
+				padding-bottom: 20px;
+			}
+
+			.fifth_1_2 ul {
+				margin-top: 10px;
+				padding-left: 0px;
+			}
+
+			.fifth_1_2 ul li {
+				padding-top: 4px;
+				padding-bottom: 5px;
+				list-style-type: none;
+			}
+
+			.fifth_1_2 ul li span {
+				font: 16px "microsoft yahei";
+				color: white;
+				padding-bottom: 20px;
+			}
+
+			.fifth_1_2 ul li span:hover {
+				color: aqua;
+			}
+
+
+			.fifth_1_3 {
+				margin-top: 100px;
+				float: left;
+				width: 320px;
+				box-sizing: border-box;
+			}
+
+
+			.fifth_1_4 {
+				margin-top: 100px;
+				float: left;
+				width: 400px;
+				margin-left: 120px;
+				box-sizing: border-box;
+			}
+
+			.fifth_1_4 ul {
+				margin-top: 10px;
+				padding-left: 0px;
+			}
+
+			.fifth_1_4 ul li {
+				padding-top: 4px;
+				padding-bottom: 5px;
+				list-style-type: none;
+			}
+
+
+
+			.fifth_1_4 ul li span {
+				font: 16px "microsoft yahei";
+				color: white;
+				padding-bottom: 20px;
+			}
+
+
+			.fifth_1_3 .font_1 {
+				margin-top: 10px;
+				float: left;
+				border-radius: 20px;
+				width: 80px;
+				text-align: center;
+				font: 24px "楷体";
+				color: white;
+				background: #555555;
+			}
+
+			.fifth_1_3 .font_1:hover {
+				background: aqua;
+			}
+
+			.fifth_1_3 .font_2 {
+				margin-top: 10px;
+				margin-left: 10px;
+				float: left;
+				border-radius: 20px;
+				width: 100px;
+				text-align: center;
+				font: 24px "楷体";
+				color: white;
+				background: #555555;
+			}
+
+			.fifth_1_3 .font_2:hover {
+				background: aqua;
+			}
+
+
+			.bb1 {
+				width: 250px;
+				height: 28px;
+				margin-top: 20px;
+			}
+
+			.search {
+				width: 222px;
+				height: 28px;
+				border: 1px solid #e5e5e5;
+				background: #f1f1f1;
+				outline: none;
+				padding-left: 20px;
+				position: absolute;
+			}
+
+			.btn {
+				width: 28px;
+				height: 27px;
+				margin-left: 200px;
+				margin-top: 1px;
+				background-repeat: no-repeat;
+				/* 大小 */
+				background-size: 28px 28px;
+				/* 位置 */
+				background-position: center;
+				background-image: url(img/search.png);
+				border: none;
+				position: absolute;
+				cursor: pointer;
+			}
+
+			.fifth_2 {
+				margin: 0 auto;
+				margin-top: 100px;
+				height: 8px;
+				width: 1500px;
+				background: #555555;
+			}
+
+			.fifth_3 {
+				margin-top: 50px;
+				color: white;
+				font: 20px "microsoft yahei";
+				float: right;
+				margin-right: 50px;
+			}
+
+
+
+			.second {
+				width: 1900px;
+				height: 665px;
+				background: white;
+				display: block;
+				box-sizing: border-box;
+				text-align: center;
+			}
+
+			.second ul {
+				list-style: none;
+			}
+
+			.news {
+				margin-top: 20px;
+				width: 400px;
+				height: 80px;
+				display: inline-block;
+			}
+
+			.news li {
+				line-height: 100px;
+				float: left;
+				width: 80px;
+				text-align: center;
+			}
+
+			.news li img {
+				width: 50px;
+				height: 50px;
+			}
+
+			.second_1 {
+				position: relative;
+				margin: 0 auto;
+				width: 800px;
+				height: 500px;
+				background: url(img/01.png);
+				background-size: 800px 500px;
+			}
+
+			.second_1 img {
+				width: 160px;
+				height: 500px;
+			}
+
+			.bottom_ul {
+				margin: 0 auto;
+				width: 800px;
+				height: 50px;
+				background: #8B4513;
+				list-style: none;
+			}
+
+			.bottom_ul li {
+				float: left;
+				width: 160px;
+				text-align: center;
+				line-height: 50px;
+			}
+
+			/* .hide{
+				display: none;
+			} */
+
+			.box1 {
+				position: absolute;
+				float: left;
+				width: 160px;
+				height: 500px;
+				background: #000FFF;
+			}
+
+			.box2 {
+				position: absolute;
+				left: 160px;
+				width: 160px;
+				height: 500px;
+				float: left;
+				background: #00FF0F;
+			}
+
+			.box3 {
+				position: absolute;
+				left: 320px;
+				float: left;
+				width: 160px;
+				height: 500px;
+				background: #00FFFF;
+			}
+
+			.box4 {
+				position: absolute;
+				left: 480px;
+				float: left;
+				width: 160px;
+				height: 500px;
+				background: #1E90FF;
+			}
+
+			.box5 {
+				position: absolute;
+				left: 640px;
+				float: left;
+				width: 160px;
+				height: 500px;
+				background: #8B4513;
+			}
+
+			.hide {
+				display: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="first">
+			<a href="index.html"><img src="img/1.01.png"></a>
+			<ul>
+				<li><a href="index.html">主页</a></li>
+				<li><a href="me.html">me</a></li>
+				<li><a href="#">动态</a></li>
+				<li><a href="#">图像馆</a></li>
+				<li><a href="#">博客</a></li>
+				<li><a href="#">联系我们</a></li>
+			</ul>
+		</div>
+
+
+
+		<div class="second">
+			<ul class="news">
+				<li><img class="news1" src="img/点.png"></li>
+				<li><img class="news2" src="img/点.png"></li>
+				<li><img class="news3" src="img/点.png"></li>
+				<li><img class="news4" src="img/点.png"></li>
+				<li><img class="news5" src="img/点.png"></li>
+			</ul>
+			<div class="second_1">
+				<div class="box1 hide"><img src="img/06.png"></div>
+				<div class="box2 hide"><img src="img/07.png"></div>
+				<div class="box3 hide"><img src="img/08.png"></div>
+				<div class="box4 hide"><img src="img/09.png"></div>
+				<div class="box5 hide"><img src="img/010.png"></div>
+
+			</div>
+
+			<ul class="bottom_ul">
+				<li nn="0">1</li>
+				<li nn="1">2</li>
+				<li nn="2">3</li>
+				<li nn="3">4</li>
+				<li nn="4">5</li>
+			</ul>
+
+
+
+		</div>
+
+		<div class="fifth">
+			<div class="fifth_1">
+				<div class="fifth_1_1">
+					<h3>近期活动</h3>
+					<ul>
+						<li><span>1.刘昊然的近期行程</span></li>
+						<li><span>2.刘昊然去微博之夜</span></li>
+						<li><span>3.刘昊然的电视剧发布会</span></li>
+						<li><span>4.刘昊然去电影颁奖典礼</span></li>
+						<li><span>5.刘昊然20岁生日宴会</span></li>
+					</ul>
+				</div>
+				<div class="fifth_1_2">
+					<h3>近期评论</h3>
+					<ul>
+						<li><span>1.20岁的好多天，依旧不如你聪明</span></li>
+						<li><span>2.生日快乐，祝你每天能吃到不一样的果冻。</span></li>
+						<li><span>3.怎么样的你我们都满意。生日快乐昊然！</span></li>
+						<li><span>4.宝贝生日快乐！要永远开心快乐！</span></li>
+						<li><span>5.你忙归忙什么时候有空嫁给我</span></li>
+
+					</ul>
+				</div>
+				<div class="fifth_1_3">
+					<h3>标签</h3>
+					<div class="font_1">小清新</div>
+					<div class="font_2">呆萌</div>
+					<div class="font_2">演员</div>
+					<div class="font_2">艺人</div>
+					<div class="font_2">长腿欧巴</div>
+					<div class="font_2">文艺青年</div>
+					<div class="font_2">暖心学长</div>
+				</div>
+				<div class="fifth_1_4">
+					<h3>关于</h3>
+					<ul>
+						<li><span>想要知道更多</span></li>
+					</ul>
+					<div class="bb1">
+						<input type="text" class="search" placeholder="SEARCH...">
+						<input type="text" class="btn">
+					</div>
+				</div>
+			</div>
+			<div class="fifth_2">
+			</div>
+			<div class="fifth_3">
+				Copyright © 2019 - 2021 南工院 移动1813 顾兆远版权所有
+			</div>
+		</div>
+	</body>
+</html>
+
+<script>
+	$(function() {
+		$(".bottom_ul li").on("mouseenter", function() {
+			$(this).css("cursor", "pointer");
+			$(".bottom_ul li").removeClass("selected");
+			$(this).addClass("selected");
+			var nn = parseInt($(this).attr('nn'));
+			$(".second_1").children().addClass('hide');
+			$(".second_1").children().eq(nn).removeClass('hide');
+		});
+		// mouseleave
+
+		$(".bottom_ul li").on("mouseleave", function() {
+			$(".second_1").children().addClass('hide');
+		});
+
+		$(function() {
+			$(".news1").on("click", function() {
+				$(".second_1").css("background", "url(img/01.png)");
+				$(".second_1").css("background-size", "800px 500px");
+				
+
+			});
+		});
+		$(function() {
+			$(".news2").on("click", function() {
+				$(".second_1").css("background", "url(img/02.png)");
+				$(".second_1").css("background-size", "800px 500px");
+			});
+		});
+		$(function() {
+			$(".news3").on("click", function() {
+				$(".second_1").css("background", "url(img/03.png)");
+				$(".second_1").css("background-size", "800px 500px");
+			});
+		});
+		$(function() {
+			$(".news4").on("click", function() {
+				$(".second_1").css("background", "url(img/04.png)");
+				$(".second_1").css("background-size", "800px 500px");
+			});
+		});
+		$(function() {
+			$(".news5").on("click", function() {
+				$(".second_1").css("background", "url(img/05.png)");
+				$(".second_1").css("background-size", "800px 500px");
+			});
+		});
+		
+	});
+</script>
