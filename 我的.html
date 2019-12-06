@@ -3,6 +3,25 @@
 	<head>
 		<meta charset="utf-8">
 		<title>刘昊然的空间网页</title>
+
+		<style>
+			.over {
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 100%;
+				z-index: 100;
+			}
+
+			.tempContainer {
+				position: fixed;
+				width: 100%;
+				margin-right: 0px;
+				margin-left: 0px;
+				text-align: center;
+				z-index: 101;
+			}
+		</style>
 		<script src="js/jquery-3.4.1.min.js"></script>
 		<style type="text/css">
 			* {
@@ -269,283 +288,104 @@ https://htmlpicture.oss-cn-beijing.aliyuncs.com/search.png);
 				margin-right: 50px;
 			}
 
-
-
 			.second {
 				width: 1900px;
 				height: 665px;
-				background: url(
-https://htmlpicture.oss-cn-beijing.aliyuncs.com/背景06.png);
-				background-size: 1900px 665px;
-				display: block;
-				box-sizing: border-box;
-			}
-
-			.second ul {
-				list-style: none;
-			}
-
-			.news {
-				margin: 0 auto;
-				width: 400px;
-				height: 80px;
-				display: block;
-			}
-
-			.news li {
-				line-height: 100px;
-				float: left;
-				width: 80px;
-				text-align: center;
-			}
-
-			.news li img {
-				width: 50px;
-				height:50px;
-				background: url(
-https://htmlpicture.oss-cn-beijing.aliyuncs.com/dian.png);
-				background-size: 50px 50px;
+				background: white;
 			}
 
 			.second_1 {
-				position: relative;
-				margin: 0 auto;
-				width: 800px;
-				height: 500px;
-				background: url(
-https://htmlpicture.oss-cn-beijing.aliyuncs.com/01.png);
-				background-size: 800px 500px;
+				text-align: center;
+				margin-top: 100px;
+				margin-left: 200px;
+				display: inline-block;
 			}
 
 			.second_1 img {
-				width: 160px;
-				height: 500px;
-			}
-
-			.bottom_ul {
+				width: 300px;
+				height: 300px;
 				margin: 0 auto;
-				width: 800px;
-				height: 50px;
-				list-style: none;
+				border-radius: 50%;
 			}
 
-			.bottom_ul li {
-				float: left;
-				width: 160px;
-					border-radius: 80px;
-				background: #D2691E;
+			.second_2 {
 				text-align: center;
-				line-height: 50px;
-			}
-
-			/* .hide{
-				display: none;
-			} */
-
-			.box1 {
-				text-align: center;
-				position: absolute;
-				float: left;
-				width: 160px;
-				height: 500px;
-				background: #000FFF;
-			}
-
-			.box2 {
-				text-align: center;
-				position: absolute;
-				left: 160px;
-				width: 160px;
-				height: 500px;
-				float: left;
-				background: #00FF0F;
-			}
-
-			.box3 {
-				text-align: center;
-				position: absolute;
-				left: 320px;
-				float: left;
-				width: 160px;
-				height: 500px;
-				background: #00FFFF;
-			}
-
-			.box4 {
-				text-align: center;
-				position: absolute;
-				left: 480px;
-				float: left;
-				width: 160px;
-				height: 500px;
-				background: #1E90FF;
-			}
-
-			.box5 {
-				text-align: center;
-				position: absolute;
-				left: 640px;
-				float: left;
-				width: 160px;
-				height: 500px;
-				background: #8B4513;
-			}
-
-			.hide {
-				display: none;
-			}
-			
-				
-			.bottom_ul li:hover{
-				background: #00FFFF;
-				border-radius: 80px;
-			}
-			
-			.news li img:active{
-				background: url(
-https://htmlpicture.oss-cn-beijing.aliyuncs.com/点.png);
-				background-size: 50px 50px;
-			}
-			
-			.second_1 span{
-				font: bold 30px "楷体";	
-				
-			}
-			
-			
-			/* 
-			 */
-			
-			.zhuan {
-				width: 200px;
-				height: 200px;
-				margin: 200px 400px;
-				position: relative;
-				list-style: none;
-				transform-style: preserve-3d;
-				animation: zhuan 16s linear infinite;
+				margin-top: 100px;
+				margin-left: 200px;
 				display: inline-block;
 			}
-			
-			@keyframes zhuan {
-				from {
-					transform:rotateX(20deg) rotateY(0deg);
-				}
-			
-				to {
-					transform:rotateX(20deg) rotateY(360deg);
-				}
+
+			.second_2 img {
+				width: 300px;
+				height: 300px;
+				margin: 0 auto;
+				border-radius: 50%;
 			}
-			
-			.zhuan li img {
-			
-				width: 200px;
-				height: 200px;
-			}
-			
-			.zhuan li {
-				width: 200px;
-				height: 200px;
-				position: absolute;
-				line-height: 200px;
+
+			.second_3 {
 				text-align: center;
-				font-size: 50px;
+				margin-top: 100px;
+				margin-left: 200px;
+				display: inline-block;
 			}
-			
-			
-			.zhuan li:nth-child(1) {
-				transform: rotateY(60deg) translateZ(200px);
+
+			.second_3 img {
+				text-align: center;
+				width: 300px;
+				height: 300px;
+				margin: 0 auto;
+				border-radius: 50%;
 			}
-			
-			.zhuan li:nth-child(2) {
-				transform: rotateY(120deg) translateZ(200px);
+
+			.second a span {
+				text-align: center;
+				display: block;
+				margin-top: 20px;
+				font: bold 50px "楷体";
+				color: #00FFFF;
+				transition: color 1.5s;
 			}
-			
-			.zhuan li:nth-child(3) {
-				transform: rotateY(240deg) translateZ(200px);
-			}
-			
-			.zhuan li:nth-child(4) {
-				transform: rotateY(300deg) translateZ(200px);
-			}
-			
-			.zhuan li:nth-child(5) {
-				transform: translateZ(200px);
-			}
-			
-			.zhuan li:nth-child(6) {
-				transform: translateZ(-200px);
-			}
-			
-			.second_12{
-				float: left;
-				margin-left: 50px;
+
+			.second a span:hover {
+				color: saddlebrown;
 			}
 		</style>
 	</head>
 	<body>
 		<div class="first">
-			<a href="index.html"><img src="
+			<a href="主页.html"><img src="
 https://htmlpicture.oss-cn-beijing.aliyuncs.com/1.01.png" ></a>
 			<ul>
-				<li><a href="index.html">主页</a></li>
-				<li><a href="me.html">me</a></li>
-				<li><a href="dynamic.html">动态</a></li>
-				<li><a href="picture.html">图像馆</a></li>
-				<li><a href="boke.html">博客</a></li>
+				<li><a href="主页.html">主页</a></li>
+				<li><a href="我的">me</a></li>
+				<li><a href="动态.html">动态</a></li>
+				<li><a href="图片馆.html">图像馆</a></li>
+				<li><a href="博客.html">博客</a></li>
 				<li><a href="#">联系我们</a></li>
 			</ul>
 		</div>
-
-
-
-		<div class="second">
-			<ul class="zhuan">
-				<li><img src="
-https://htmlpicture.oss-cn-beijing.aliyuncs.com/刘昊然00.png"></li>
-				<li><img src="
-https://htmlpicture.oss-cn-beijing.aliyuncs.com/刘昊然01.png"></li>
-				<li><img src="
-https://htmlpicture.oss-cn-beijing.aliyuncs.com/刘昊然02.png"></li>
-				<li><img src="
-https://htmlpicture.oss-cn-beijing.aliyuncs.com/刘昊然03.png"></li>
-				<li><img src="
-https://htmlpicture.oss-cn-beijing.aliyuncs.com/刘昊然04.png"></li>
-				<li><img src="
-https://htmlpicture.oss-cn-beijing.aliyuncs.com/刘昊然05.png"></li>
-			</ul>.
-			
-			<div class="second_12">
-				
-				<ul class="news">
-					<li><img class="news1" ></li>
-					<li><img class="news2"></li>
-					<li><img class="news3"></li>
-					<li><img class="news4" ></li>
-					<li><img class="news5"></li>
-				</ul>
-				<div class="second_1">
-					<div class="box1 hide"><span>小清新</span></div>
-					<div class="box2 hide"><span>呆萌</span></div>
-					<div class="box3 hide"><span>文艺青年</span></div>
-					<div class="box4 hide"><span>暖心学长</span></div>
-					<div class="box5 hide"><span>艺人</span></div>
-				
-				</div>
-				
-				<ul class="bottom_ul">
-					<li nn="0">1</li>
-					<li nn="1">2</li>
-					<li nn="2">3</li>
-					<li nn="3">4</li>
-					<li nn="4">5</li>
-				</ul>
-				
+<div class="over"></div>
+		<div class="second amplifyImg">
+			<div class="second_1">
+				<a><img src="
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/me01.png"></a>
+				<a><span>刘昊然-杂志</span></a>
+				<span>刘昊然 《时尚芭莎》九月大片，<br>时尚的质感《Size潮流生活》《红秀GRAZIA》<br><br><br></span>
 			</div>
-			
-			
+			<div class="second_2">
+				<a><img src="
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/me02.png"></a>
+				<a><span>刘昊然的同年照</span></a>
+				<span>可爱的脸庞和乖巧的气质和如今没<br>有太大差别，尤其是那颗标志性的小虎牙更加<br>让影迷坚信这就是自家偶像的童年照。<br><br></span>
 
+			</div>
+			<div class="second_3">
+				<a><img src="
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/me03.png"></a>
+				<a><span>刘昊然电影《双生》</span></a>
 
+				<span>该片讲述了艺术学校的学生李拼找到<br>了一份兼职工作，为女孩涛画肖像画，来到了<br>一处偏僻的林中豪宅，期间发生了一系列诡异事<br>件的故事。</span>
+			</div>
 		</div>
 
 		<div class="fifth">
@@ -602,53 +442,75 @@ https://htmlpicture.oss-cn-beijing.aliyuncs.com/刘昊然05.png"></li>
 </html>
 
 <script>
-	$(function() {
-		$(".bottom_ul li").on("mouseenter", function() {
-			$(this).css("cursor", "pointer");
-			$(".bottom_ul li").removeClass("selected");
-			$(this).addClass("selected");
-			var nn = parseInt($(this).attr('nn'));
-			$(".second_1").children().addClass('hide');
-			$(".second_1").children().eq(nn).removeClass('hide');
-		});
-		// mouseleave
-
-		$(".bottom_ul li").on("mouseleave", function() {
-			$(".second_1").children().addClass('hide');
-		});
-
-		$(function() {
-			$(".news1").on("click", function() {
-				$(".second_1").css("background", "url(https://htmlpicture.oss-cn-beijing.aliyuncs.com/01.png)");
-				$(".second_1").css("background-size", "800px 500px");
-				
-
+	$(document).ready(function() {
+		var imgsObj = $('.amplifyImg img');
+		if (imgsObj) {
+			$.each(imgsObj, function() {
+				$(this).click(function() {
+					var currImg = $(this);
+					coverLayer(1);
+					var tempContainer = $('<div class=tempContainer></div>'); 
+					with(tempContainer) { 
+						appendTo("body");
+						var windowWidth = $(window).width();
+						var windowHeight = $(window).height();
+						var orignImg = new Image();
+						orignImg.src = currImg.attr("src");
+						var currImgWidth = orignImg.width;
+						var currImgHeight = orignImg.height;
+						if (currImgWidth < windowWidth) { 
+							if (currImgHeight < windowHeight) {
+								var topHeight = (windowHeight - currImgHeight) / 2;
+								if (topHeight > 35) { 
+									topHeight = topHeight - 35;
+									css('top', topHeight);
+								} else {
+									css('top', 0);
+								}
+								html('<img border=0 src=' + currImg.attr('src') + '>');
+							} else {
+								css('top', 0);
+								html('<img border=0 src=' + currImg.attr('src') + ' height=' + windowHeight + '>');
+							}
+						} else {
+							var currImgChangeHeight = (currImgHeight * windowWidth) / currImgWidth;
+							if (currImgChangeHeight < windowHeight) {
+								var topHeight = (windowHeight - currImgChangeHeight) / 2;
+								if (topHeight > 35) {
+									topHeight = topHeight - 35;
+									css('top', topHeight);
+								} else {
+									css('top', 0);
+								}
+								html('<img border=0 src=' + currImg.attr('src') + ' width=' + windowWidth + ';>');
+							} else {
+								css('top', 0);
+								html('<img border=0 src=' + currImg.attr('src') + ' width=' + windowWidth + '; height=' + windowHeight +
+									'>');
+							}
+						}
+					}
+					tempContainer.click(function() {
+						$(this).remove();
+						coverLayer(0);
+					});
+				});
 			});
-		});
-		$(function() {
-			$(".news2").on("click", function() {
-				$(".second_1").css("background", "url(https://htmlpicture.oss-cn-beijing.aliyuncs.com/02.png)");
-				$(".second_1").css("background-size", "800px 500px");
-			});
-		});
-		$(function() {
-			$(".news3").on("click", function() {
-				$(".second_1").css("background", "url(https://htmlpicture.oss-cn-beijing.aliyuncs.com/03.png)");
-				$(".second_1").css("background-size", "800px 500px");
-			});
-		});
-		$(function() {
-			$(".news4").on("click", function() {
-				$(".second_1").css("background", "url(https://htmlpicture.oss-cn-beijing.aliyuncs.com/04.png)");
-				$(".second_1").css("background-size", "800px 500px");
-			});
-		});
-		$(function() {
-			$(".news5").on("click", function() {
-				$(".second_1").css("background", "url(https://htmlpicture.oss-cn-beijing.aliyuncs.com/刘昊然00.png)");
-				$(".second_1").css("background-size", "800px 500px");
-			});
-		});
-		
+		} else {
+			return false;
+		}
+		function coverLayer(tag) {
+			with($('.over')) {
+				if (tag == 1) {
+					css('height', $(document).height());
+					css('display', 'block');
+					css('opacity', 1);
+					css("background-color", "#FFFFFF");
+					css("background-color", "rgba(0,0,0,0.7)"); 
+				} else {
+					css('display', 'none');
+				}
+			}
+		}
 	});
 </script>

@@ -246,7 +246,8 @@
 				background-size: 28px 28px;
 				/* 位置 */
 				background-position: center;
-				background-image: url(https://htmlpicture.oss-cn-beijing.aliyuncs.com/search.png);
+				background-image: url(
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/search.png);
 				border: none;
 				position: absolute;
 				cursor: pointer;
@@ -269,156 +270,229 @@
 			}
 
 
+
 			.second {
-				margin-left: 45px;
-				width: 1800px;
-				height: 800px;
+				width: 1900px;
+				height: 665px;
+				background: url(
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/背景06.png);
+				background-size: 1900px 665px;
+				display: block;
 				box-sizing: border-box;
 			}
-			
-			.second_1{
-				box-sizing: border-box;
+
+			.second ul {
+				list-style: none;
+			}
+
+			.news {
+				margin: 0 auto;
+				width: 400px;
+				height: 80px;
+				display: block;
+			}
+
+			.news li {
+				line-height: 100px;
+				float: left;
+				width: 80px;
+				text-align: center;
+			}
+
+			.news li img {
+				width: 50px;
+				height:50px;
+				background: url(
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/dian.png);
+				background-size: 50px 50px;
+			}
+
+			.second_1 {
 				position: relative;
-				margin: 10px;
-				width: 1800px;
-				height: 250px;
-				border: 1px solid #D2691E;
+				margin: 0 auto;
+				width: 800px;
+				height: 500px;
+				background: url(
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/01.png);
+				background-size: 800px 500px;
 			}
-			
-			.sp_1{
-				position: absolute;
-				left: 120px;
-				width: 270px;
-				height: 250px;
+
+			.second_1 img {
+				width: 160px;
+				height: 500px;
 			}
-			.sp_1 img{
-				width: 270px;
-				height: 180px;
-			}
-			.sp_1 h2{
-				margin-top: 10px;
-				font: bold 30px "楷体";
-			}
-			
-			.sp_2{
-				position: absolute;
-				width: 1075px;
-				height: 200px;
-				top: 50px;
-				left: 400px;
-			}
-			
-			.sp_2 span{
-			
-				font: 20px "黑体";
-			}
-			.sp_2 button{
-				margin-top: 20px;
-				margin-left: 20px;
-				width: 100px;
+
+			.bottom_ul {
+				margin: 0 auto;
+				width: 800px;
 				height: 50px;
-				font:bold 25px "宋体";
+				list-style: none;
+			}
+
+			.bottom_ul li {
+				float: left;
+				width: 160px;
+					border-radius: 80px;
+				background: #D2691E;
+				text-align: center;
+				line-height: 50px;
+			}
+
+			/* .hide{
+				display: none;
+			} */
+
+			.box1 {
+				text-align: center;
+				position: absolute;
+				float: left;
+				width: 160px;
+				height: 500px;
+				background: #000FFF;
+			}
+
+			.box2 {
+				text-align: center;
+				position: absolute;
+				left: 160px;
+				width: 160px;
+				height: 500px;
+				float: left;
+				background: #00FF0F;
+			}
+
+			.box3 {
+				text-align: center;
+				position: absolute;
+				left: 320px;
+				float: left;
+				width: 160px;
+				height: 500px;
+				background: #00FFFF;
+			}
+
+			.box4 {
+				text-align: center;
+				position: absolute;
+				left: 480px;
+				float: left;
+				width: 160px;
+				height: 500px;
+				background: #1E90FF;
+			}
+
+			.box5 {
+				text-align: center;
+				position: absolute;
+				left: 640px;
+				float: left;
+				width: 160px;
+				height: 500px;
+				background: #8B4513;
+			}
+
+			.hide {
+				display: none;
 			}
 			
-			.second_2{
-				box-sizing: border-box;
+				
+			.bottom_ul li:hover{
+				background: #00FFFF;
+				border-radius: 80px;
+			}
+			
+			.news li img:active{
+				background: url(
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/点.png);
+				background-size: 50px 50px;
+			}
+			
+			.second_1 span{
+				font: bold 30px "楷体";	
+				
+			}
+			
+			
+			/* 
+			 */
+			
+			.zhuan {
+				width: 200px;
+				height: 200px;
+				margin: 200px 400px;
 				position: relative;
-				margin: 10px;
-				width: 1800px;
-				height: 250px;
-				border: 1px solid #D2691E;
+				list-style: none;
+				transform-style: preserve-3d;
+				animation: zhuan 16s linear infinite;
+				display: inline-block;
 			}
 			
-			.sp_3{
-				position: absolute;
-				left: 120px;
-				width: 270px;
-				height: 250px;
-			}
-			.sp_3 img{
-				width: 270px;
-				height: 180px;
-			}
-			.sp_3 h2{
-				margin-top: 10px;
-				font: bold 30px "楷体";
+			@keyframes zhuan {
+				from {
+					transform:rotateX(20deg) rotateY(0deg);
+				}
+			
+				to {
+					transform:rotateX(20deg) rotateY(360deg);
+				}
 			}
 			
-			.sp_4{
-				position: absolute;
-				width: 1075px;
+			.zhuan li img {
+			
+				width: 200px;
 				height: 200px;
-				top: 50px;
-				left: 400px;
 			}
 			
-			.sp_4 span{
-			
-				font: 20px "黑体";
-			}
-			.sp_4 button{
-				margin-top: 20px;
-				margin-left: 20px;
-				width: 100px;
-				height: 50px;
-				font:bold 25px "宋体";
-			}
-			
-			.second_3{
-				box-sizing: border-box;
-				position: relative;
-				margin: 10px;
-				width: 1800px;
-				height: 250px;
-				border: 1px solid #D2691E;
-			}
-			
-			.sp_5{
-				position: absolute;
-				left: 120px;
-				width: 270px;
-				height: 250px;
-			}
-			.sp_5 img{
-				width: 270px;
-				height: 180px;
-			}
-			.sp_5 h2{
-				margin-top: 10px;
-				font: bold 30px "楷体";
-			}
-			
-			.sp_6{
-				position: absolute;
-				width: 1075px;
+			.zhuan li {
+				width: 200px;
 				height: 200px;
-				top: 50px;
-				left: 400px;
+				position: absolute;
+				line-height: 200px;
+				text-align: center;
+				font-size: 50px;
 			}
 			
-			.sp_6 span{
 			
-				font: 20px "黑体";
+			.zhuan li:nth-child(1) {
+				transform: rotateY(60deg) translateZ(200px);
 			}
-			.sp_6 button{
-				margin-top: 20px;
-				margin-left: 20px;
-				width: 100px;
-				height: 50px;
-				font:bold 25px "宋体";
+			
+			.zhuan li:nth-child(2) {
+				transform: rotateY(120deg) translateZ(200px);
+			}
+			
+			.zhuan li:nth-child(3) {
+				transform: rotateY(240deg) translateZ(200px);
+			}
+			
+			.zhuan li:nth-child(4) {
+				transform: rotateY(300deg) translateZ(200px);
+			}
+			
+			.zhuan li:nth-child(5) {
+				transform: translateZ(200px);
+			}
+			
+			.zhuan li:nth-child(6) {
+				transform: translateZ(-200px);
+			}
+			
+			.second_12{
+				float: left;
+				margin-left: 50px;
 			}
 		</style>
 	</head>
 	<body>
 		<div class="first">
-			<a href="index.html"><img src="
-https://htmlpicture.oss-cn-beijing.aliyuncs.com/1.01.png"></a>
+			<a href="主页.html"><img src="
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/1.01.png" ></a>
 			<ul>
-				<li><a href="index.html">主页</a></li>
-				<li><a href="me.html">me</a></li>
-				<li><a href="dynamic.html">动态</a></li>
-				<li><a href="picture.html">图像馆</a></li>
-				<li><a href="boke.html">博客</a></li>
+				<li><a href="主页.html">主页</a></li>
+				<li><a href="我的.html">me</a></li>
+				<li><a href="动态.html">动态</a></li>
+				<li><a href="图片馆.html">图像馆</a></li>
+				<li><a href="博客.html">博客</a></li>
 				<li><a href="#">联系我们</a></li>
 			</ul>
 		</div>
@@ -426,54 +500,53 @@ https://htmlpicture.oss-cn-beijing.aliyuncs.com/1.01.png"></a>
 
 
 		<div class="second">
-
-
-			<div class="second_1">
-				<div class="sp_1">
-					<h2>《九州缥缈录》</h2>
-					<img src="
-https://htmlpicture.oss-cn-beijing.aliyuncs.com/bo01.png">
-				</div>
-
-				<div class="sp_2">
-					<span>刘昊然，1997年10月10日出生于河南省平顶山市，中国内地男演员，就读于中央戏剧学院表演系本科。2014年，主演电影《北京爱情故事》，正式出道，凭借该片提名第21届北京大学生电影节最佳新人奖。2015年5月，加盟国防教育特别节目《真正男子汉》；7月，以专业和文化双料第一名的成绩被中央戏剧学院录取；12月，主演悬疑喜剧电影《唐人街探案》，凭借该片获得第20届华鼎奖中国最佳新人奖和2016中国电影指
-						...</span>
-					<br>
-					<a href="https://weibo.com/u/6315230663" target="_blank"><button type="button">更多</button></a>
-				</div>
-			</div>
-			<div class="second_2">
-				<div class="sp_3">
-					<h2>《我和我的祖国》</h2>
-					<img src="
-https://htmlpicture.oss-cn-beijing.aliyuncs.com/bo02.png">
+			<ul class="zhuan">
+				<li><img src="
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/刘昊然00.png"></li>
+				<li><img src="
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/刘昊然01.png"></li>
+				<li><img src="
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/刘昊然02.png"></li>
+				<li><img src="
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/刘昊然03.png"></li>
+				<li><img src="
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/刘昊然04.png"></li>
+				<li><img src="
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/刘昊然05.png"></li>
+			</ul>.
+			
+			<div class="second_12">
+				
+				<ul class="news">
+					<li><img class="news1" ></li>
+					<li><img class="news2"></li>
+					<li><img class="news3"></li>
+					<li><img class="news4" ></li>
+					<li><img class="news5"></li>
+				</ul>
+				<div class="second_1">
+					<div class="box1 hide"><span>小清新</span></div>
+					<div class="box2 hide"><span>呆萌</span></div>
+					<div class="box3 hide"><span>文艺青年</span></div>
+					<div class="box4 hide"><span>暖心学长</span></div>
+					<div class="box5 hide"><span>艺人</span></div>
+				
 				</div>
 				
-				<div class="sp_4">
-					<span>刘昊然，1997年10月10日出生于河南省平顶山市，中国内地男演员，就读于中央戏剧学院表演系本科。2014年，主演电影《北京爱情故事》，正式出道，凭借该片提名第21届北京大学生电影节最佳新人奖。2015年5月，加盟国防教育特别节目《真正男子汉》；7月，以专业和文化双料第一名的成绩被中央戏剧学院录取；12月，主演悬疑喜剧电影《唐人街探案》，凭借该片获得第20届华鼎奖中国最佳新人奖和2016中国电影指
-						...</span>
-					<br>
-					<a href="https://weibo.com/u/6724013335?refer_flag=1005055014_&is_hot=1" target="_blank"><button type="button">更多</button></a>
-				</div>
-			</div>
-			<div class="second_3">
-				<div class="sp_5">
-					<h2>《唐人街探案3》</h2>
-					<img src="
-https://htmlpicture.oss-cn-beijing.aliyuncs.com/bo03.png">
-				</div>
+				<ul class="bottom_ul">
+					<li nn="0">1</li>
+					<li nn="1">2</li>
+					<li nn="2">3</li>
+					<li nn="3">4</li>
+					<li nn="4">5</li>
+				</ul>
 				
-				<div class="sp_6">
-					<span>刘昊然，1997年10月10日出生于河南省平顶山市，中国内地男演员，就读于中央戏剧学院表演系本科。2014年，主演电影《北京爱情故事》，正式出道，凭借该片提名第21届北京大学生电影节最佳新人奖。2015年5月，加盟国防教育特别节目《真正男子汉》；7月，以专业和文化双料第一名的成绩被中央戏剧学院录取；12月，主演悬疑喜剧电影《唐人街探案》，凭借该片获得第20届华鼎奖中国最佳新人奖和2016中国电影指
-						...</span>
-					<br>
-					<a href="https://weibo.com/tangrenjietanan?refer_flag=1001200001_&is_hot=1#_rnd1575536043294" target="_blank"><button type="button">更多</button></a>
-				</div>
 			</div>
+			
+			
+
 
 		</div>
-
-
 
 		<div class="fifth">
 			<div class="fifth_1">
@@ -527,3 +600,55 @@ https://htmlpicture.oss-cn-beijing.aliyuncs.com/bo03.png">
 		</div>
 	</body>
 </html>
+
+<script>
+	$(function() {
+		$(".bottom_ul li").on("mouseenter", function() {
+			$(this).css("cursor", "pointer");
+			$(".bottom_ul li").removeClass("selected");
+			$(this).addClass("selected");
+			var nn = parseInt($(this).attr('nn'));
+			$(".second_1").children().addClass('hide');
+			$(".second_1").children().eq(nn).removeClass('hide');
+		});
+		// mouseleave
+
+		$(".bottom_ul li").on("mouseleave", function() {
+			$(".second_1").children().addClass('hide');
+		});
+
+		$(function() {
+			$(".news1").on("click", function() {
+				$(".second_1").css("background", "url(https://htmlpicture.oss-cn-beijing.aliyuncs.com/01.png)");
+				$(".second_1").css("background-size", "800px 500px");
+				
+
+			});
+		});
+		$(function() {
+			$(".news2").on("click", function() {
+				$(".second_1").css("background", "url(https://htmlpicture.oss-cn-beijing.aliyuncs.com/02.png)");
+				$(".second_1").css("background-size", "800px 500px");
+			});
+		});
+		$(function() {
+			$(".news3").on("click", function() {
+				$(".second_1").css("background", "url(https://htmlpicture.oss-cn-beijing.aliyuncs.com/03.png)");
+				$(".second_1").css("background-size", "800px 500px");
+			});
+		});
+		$(function() {
+			$(".news4").on("click", function() {
+				$(".second_1").css("background", "url(https://htmlpicture.oss-cn-beijing.aliyuncs.com/04.png)");
+				$(".second_1").css("background-size", "800px 500px");
+			});
+		});
+		$(function() {
+			$(".news5").on("click", function() {
+				$(".second_1").css("background", "url(https://htmlpicture.oss-cn-beijing.aliyuncs.com/刘昊然00.png)");
+				$(".second_1").css("background-size", "800px 500px");
+			});
+		});
+		
+	});
+</script>
