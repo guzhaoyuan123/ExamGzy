@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.second {
+				text-align: center;
+				width: 600px;
+				height: 400px;
+				border: 1px solid #D2691E;
+				background: #FF7F24;
+				opacity: 0.8;
+				position: absolute;
+				top: 250px;
+				left: 650px;
+			}
+
+			.second_1 {
+				position: relative;
+				width: 1900px;
+				height: 1000px;
+				background: url(https://htmlpicture.oss-cn-beijing.aliyuncs.com/背景03.png) no-repeat;
+				background-size: 1900px 1000px;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+
+			.first {
+				display: block;
+				width: 1900px;
+				height: 130px;
+				background: #000000;
+			}
+
+			.first img {
+				height: 110px;
+				width: 220px;
+				float: left;
+				margin-left: 100px;
+				margin-top: 10px;
+			}
+
+			.first img:link {}
+
+
+
+			.first ul {
+				width: 480px;
+				height: 130px;
+				list-style: none;
+				margin-right: 150px;
+				float: right;
+			}
+
+			.first ul li {
+				float: left;
+				width: 80px;
+				line-height: 130px;
+			}
+
+			.first ul li a:visited {
+				color: white;
+			}
+
+			.first ul li a:link {
+
+				text-decoration: blink;
+				font: 18px "Microsoft YaHei";
+				color: white;
+			}
+
+			.first ul li a:hover {
+				font: 20px "Microsoft YaHei";
+				color: chocolate;
+			}
+			
+			span{
+				font: bold 18px "黑体";
+			}
+			
+			p{
+				margin-top: 30px;
+				font: bold 18px "楷体";
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="first">
+			<a href="主页.html"><img src="
+https://htmlpicture.oss-cn-beijing.aliyuncs.com/1.01.png"></a>
+			<ul>
+				<li><a href="主页.html">主页</a></li>
+				<li><a href="我的">me</a></li>
+				<li><a href="动态.html">动态</a></li>
+				<li><a href="图片馆.html">图像馆</a></li>
+				<li><a href="博客.html">博客</a></li>
+				<li><a href="联系我们.html">联系我们</a></li>
+			</ul>
+		</div>
+		<div class="second_1">
+			<div class="second">
+				<form action="pp.aspx">
+
+					<span>您的所在地：</span>
+					<br><span>省份：</span><select id="prove">
+						    <option>--请选择省份--</option>
+						   </select>
+					   <span>城市：</span><select id="city">
+						    <option>--请选择城市--</option>
+						   </select>
+					   <span>区/县</span><select id="county">
+						    <option>--请选择区县--</option>
+						   </select>
+					<p>用户名:<input type="text" placeholder="请输入用户名" width="100dp" /></p>
+					<p>
+						留言时间:<input type="date" />
+					</p>
+					<p>
+						<label for="bb">输入您的邮箱:</label>
+						<input id="bb" type="email" />
+					</p>
+
+					<p>
+						手机号码:<input type="text" />
+					</p>
+
+
+					请留言:<br />
+					<textarea name="message" rows="5" cols="50"></textarea>
+
+
+					<br />
+
+					<input type="submit" value="提交" />
+					<input type="reset" value="重置" />
+				</form>
+
+			</div>
+		</div>
+
+	</body>
+</html>
+
+
+<script>
+	var arr = [
+		[1, '陕西省', 0],
+		[2, '四川省', 0],
+		[3, '甘肃省', 0],
+		[4, '山西省', 0],
+
+		[5, '西安市', 1], //最后的数字与对应的省份前数字相同
+		[6, '宝鸡市', 1],
+		[7, '成都市', 2],
+		[8, '西充市', 2],
+		[9, '兰州市', 3],
+		[10, '天水市', 3],
+
+		[11, '高新区', 5], //最后的数字与对应的城市前数字相同
+		[12, '雁塔区', 5],
+		[13, '长安区', 5],
+		[14, '秦都区', 6]
+	]
+
+
+	var prove = null;
+	var city = null;
+	var county = null; //省，市，区的初始化
+	window.onload = function() {
+		// 获取页面中的元素
+		prove = document.getElementById('prove');
+		city = document.getElementById('city');
+		county = document.getElementById('county');
+		str = '<option>--请选择省份--</option>';
+		// 页面在加载时获取所有的省份显示在下拉框中
+		for (var i = 0; i < arr.length; i++) {
+			// 判断数组中索引为2的位置 值为0   是指所有的省份
+			if (arr[i][2] == 0) { //在每行的数组元素中查找索引为2的位置 值为0的元素
+				str += '<option value="' + arr[i][0] + '">' + arr[i][1] + '</option>';
+
+			}
+			6
+		}
+		//    console.log(str);
+		prove.innerHTML = str;
+
+
+
+
+		// 选择省份  遍历城市
+		//选择省份  从而选择出与省份对应的城市 
+		prove.onchange = function() {
+			str = '<option>--请选择城市--</option>'; //清除str之前累积的值
+			var indexValue = document.getElementById('prove').value;
+			//indexValue用来获取省份前所对应的数字
+			for (var i = 0; i < arr.length; i++) {
+				// 判断数组中索引为2的数字 和 省份下拉框的value一致;
+				if (arr[i][2] == indexValue) { //在每行的数组元素中查找索引为2的位置 值为省份所对应数字的元素
+					str += '<option value="' + arr[i][0] + '">' + arr[i][1] + '</option>';
+				}
+			}
+			city.innerHTML = str;
+			county.innerHTML = '<option>--请选择区县--</option>'; //当改变省份时，区县的文本框初始化
+		}
+
+
+		//选择城市   从而选择出与城市对应的区县 
+		city.onchange = function() {
+			str = '<option>--请选择区县--</option>';
+			var indexValue_01 = document.getElementById('city').value;
+			for (var i = 0; i < arr.length; i++) {
+				if (arr[i][2] == indexValue_01) {
+					str += '<option value="' + [i][0] + '">' + arr[i][1] + '</option>';
+				}
+			}
+			county.innerHTML = str;
+		}
+	}
+</script>
